@@ -1,0 +1,45 @@
+Assignment 14) 
+
+Demonstrate Properties of website navigation controls. 
+
+
+1.Start->Programs->Visual studio 2008 
+
+2.Create new web site. 
+
+3.Right click on solution Explorer->Add New Items ->Select MasterPage and add MasterPage.master 
+ 
+4.Add Html Table in Master Page. 
+
+5.Drag and Drop ContentPlaceHolder into Middle Table Cell. 
+
+6..Right click on solution Explorer->Add New Items ->Select Web Form and Add Home.aspx 
+ 
+Do not forget to Check Select Master Page CheckBox . 
+ 
+7.	Similarly add Two More Content Pages Aboutus.aspx and Contactus.aspx 
+
+8.	Add Menu Control in Top Most Cell of Table & Click on Smart tag -> Edit Menu Items and Add 3 menu items(Home,AboutUs,ContactUs). And set the Text and Navigate Url Properties of Menu Items. 
+
+9.	Drag SiteMapDataSource Control from ToolBox and Drop it on Master Page. 
+
+10.	Drag TreeView Control from ToolBox and Drop it on Master Page. 
+
+11.	Write a following Code in SiteMapDataSource Control file. 
+
+<?xml version="1.0" encoding="utf-8" ?> 
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" > 
+<siteMapNode url="" title="" description=""> 
+<siteMapNode url="home.aspx" title="HOME" description="" /> 
+<siteMapNode url="aboutus.aspx" title="ABOUT US" description="" /> 
+<siteMapNode url="contact.aspx" title="CONTACT US" description="" /> 
+</siteMapNode> 
+</siteMap> 
+
+
+12. Click on SmartTag on TreeView Control and Choose the DataSource->SiteMapDataSource1 
+
+13 . Drag SiteMapPath Control from ToolBox and Drop it on Master Page. 
+
+14.  Save Built and Run. 
+

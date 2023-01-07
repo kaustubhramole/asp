@@ -1,0 +1,43 @@
+Assignment 18) 
+
+Demonstrate Web Service hosting, access in ASP.NET  
+ 
+1)Create Microsoft Visual Studio 2008 
+
+2)Select File->New->WebSite 
+
+3)Now,Add Controls in Default.aspx i.e.2 TextBox & 1 Button , 1 Label. 
+  
+5)Right-click web application’s name in the Solution Explorer window and then select the Add New Item option from the context menu 
+
+6)Select Web Service template from the Templates pane and click the Add button. 
+
+7)Now Code for add() in WebService.cs is as below 
+[WebMethod] 
+
+public int add(int a,int b) 
+{ 
+return a+b; 
+} 
+
+
+8)Go to Build Menu, Select Build Web Site and then run this code and test in Browser. 
+
+9) Right-click web application’s name in the Solution Explorer window and then select the Add Web Reference option from the context menu. 
+
+10)Select Web Services in this Solution ,Give Web Reference name and then Add Reference. 
+
+11) Give ws name as reference. 
+
+12)Below Code write on Button Click in Default.aspx Page is 
+
+protected void Button1_Click1(object sender, EventArgs e) 
+{ int a = Convert.ToInt32(TextBox1.Text); 
+int b = Convert.ToInt32(TextBox2.Text); 
+ws.WebService w = new ws.WebService(); 
+int c= w.add(a, b); 
+Label1.Text = c.ToString(); 
+} 
+
+
+13)	Save the program and run it. 

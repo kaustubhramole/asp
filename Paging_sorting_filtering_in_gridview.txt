@@ -1,0 +1,17 @@
+Assignment 	9) 	
+
+Demonstrate 
+paging, 	
+sorting, 	
+filtering of data in  
+asp:DataGrid/DataGridView. 
+ 
+ 
+1.	Right Click on App_Data in Solution Explorer  
+2.	Add New Item select SQL Server Database and give database name 
+3.	In Server Explorer right click on Tables, select Add New Table 
+4.	Right click on your table and select Show Table Data and insert records 
+5.	Take GridView from Data click on Choose Data Source, Database, select your database/table/fields 
+6.	Click on Test Query and Finish 
+7.	Click on GridView and Tick Enable Paging, Enable Sorting and set PageSize property. 
+8.	Save and Run 

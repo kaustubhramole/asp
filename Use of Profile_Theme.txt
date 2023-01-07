@@ -1,0 +1,130 @@
+Assignment 12) Create sample website for demonstrating use of Profiles/Themes using skin files. 
+Profiles 
+
+
+
+1.Add the profile details in the web.config file within the <system.web> element. 
+ 	
+
+<configuration> 
+ 	 	<system.web> 
+ 	 	 	<profile> 
+ 	 	 	   <properties> 
+      <add name="Name" type="String"/> 
+ 	 	 	 	<add name="Class" type="String"/> 
+ 	 	 	   </properties> 
+ 	 	 	</profile> 
+ 	 	</system.web> 
+ 	</configuration> 
+
+
+
+2.	Add 2 labels and 2 text boxes to take the user input as defined in the profile and add a button for submitting the data. 
+
+
+3.	Update Page_load to display profile information and Write the following handler for the Submit button, for saving the user data into the profile: 
+
+
+
+ using System; 
+using System.Configuration;
+using System.Data; 
+using System.Linq; 
+using System.Web; 
+using System.Web.Security; 
+using System.Web.UI; 
+using System.Web.UI.HtmlControls; 
+using System.Web.UI.WebControls; 
+using System.Web.UI.WebControls.WebParts; 
+using System.Xml.Linq; 
+ public partial class _Default : System.Web.UI.Page  
+{      protected void Page_Load(object sender, EventArgs e) 
+     { 
+        if (!this.IsPostBack) 
+        { 
+            ProfileCommon pc = this.Profile.GetProfile(Profile.UserName); 
+ 
+            if (pc != null) 
+            { 
+                this.TextBox1.Text = pc.Name;                 
+		this.TextBox2.Text = pc.Class; 
+            } 
+        }     
+ } 
+    
+
+ protected void Button1_Click(object sender, EventArgs e) 
+     { 
+        ProfileCommon pc = this.Profile.GetProfile(Profile.UserName); 
+ 
+        if (pc != null) 
+        { 
+            	pc.Name = this.TextBox1.Text;             
+		pc.Class= this.TextBox2.Text;            
+		pc.Save(); 
+        } 
+     } 
+}  
+
+
+4. When the page is executed for the first time, 
+the user needs to enter the information. 
+However, next time the user details would be automatically loaded. 
+ 
+ 
+ 
+OUTPUT:- 
+ 
+  
+ 
+ 
+ 
+Themes/Skins 
+1.Start->Programs->Visual studio 2008 
+
+2.	Create new web site. 
+
+3.	Add one Theme Folder in your Website. 
+
+i) Right Click > Add New ASP.NET Folder >Choose Theme folder. 
+
+4.	Add one Skin File in your Website. 
+
+ii)Right Click > Add New Item > Skin file. 
+
+5.	Write a following code in Skin File. 
+ 
+<asp:Label runat="server" ForeColor="orange"></asp:Label> 
+ 
+<asp:TextBox runat="server" BackColor="orange" ForeColor="black" 
+BorderColor="Red" BorderStyle="Solid"></asp:TextBox>  
+<asp:RadioButton runat="server" BackColor="orange" 
+ForeColor="black" BorderColor="Red" 
+BorderStyle="Solid"></asp:RadioButton> 
+ 
+<asp:Button runat="server" BackColor="orange" ForeColor="black" 
+BorderColor="Red" BorderStyle="Solid"></asp:Button>  
+<asp:TextBox runat="server" skinID="s1" BackColor="Red" 
+ForeColor="black" BorderColor="Red" 
+BorderStyle="Solid"></asp:TextBox> 
+ 
+6. Apply this skin file in thoruh out the website then Goto web.config file and set the Page attribute value give the theme name. 
+
+<pages theme="Theme1"> 
+ 
+7.	Apply this skin file on page level controls then Goto Source Code set the Page attribute value give the theme name. 
+
+	<%@ Page Theme="Theme1" Language="C#" AutoEventWireup="true" 
+	CodeFile="Default.aspx.cs" Inherits="_Default" %> 
+ 
+8.	Apply this skin on Particular Control level then Goto Source Code set the skinID. 
+	
+
+	<asp:TextBox ID="TextBox3" runat="server" 
+	SkinID="s1"></asp:TextBox> 
+ 
+ 
+ 
+ 
+ 
+OUTPUT:- 

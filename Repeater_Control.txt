@@ -1,0 +1,28 @@
+Assignment 8) Demonstrate Repeater control with the help of various templates. 
+ 
+1.	Right Click on App_Data in Solution Explorer  
+2.	Add New Item select SQL Server Database and give database name 
+3.	In Server Explorer right click on Tables, select Add New Table 
+4.	Right click on your table and select Show Table Data and insert records 
+5.	Take GridView from Data click on Choose Data Source, Database, select your database/table/fields 
+6.	Click on Test Query and Finish 
+ 
+7.	Add Following code in Source view 
+
+
+
+
+<table border =2> 
+<asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1"> 
+<HeaderTemplate > 
+<tr ><td style ="background-color:Lime ;">ROLL NO</td> 
+<td style ="background-color:Lime ;">NAME</td></tr> 
+</HeaderTemplate> 
+<ItemTemplate > 
+<tr><td><%#Eval("rno") %></td> 
+<td><%#Eval("name") %></td></tr></ItemTemplate> 
+<AlternatingItemTemplate > 
+<tr><td style ="background-color :Gray ;"><%#Eval("rno") %></td> <td style ="background-color :Gray;"><%#Eval("name")%> </td></tr> 
+</AlternatingItemTemplate> 
+</asp:Repeater> </table> 
+
